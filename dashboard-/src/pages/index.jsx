@@ -8,6 +8,8 @@ export { default as Kanban} from "./Kanban.jsx";
 export { default as Editor} from "./Editor.jsx";
 export { default as Schedule} from "./Schedule.jsx";
 export { default as ScheduleApp} from "./ScheduleApp.jsx";
+export { default as PublishEvent} from "./PublishEvent.jsx";
+
 
 
 export { default as Area } from "./Charts/Area";
