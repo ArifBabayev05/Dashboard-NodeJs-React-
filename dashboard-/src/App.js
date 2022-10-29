@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import { Navbar, Sidebar, ThemeSettings } from "./components";
+import { Navbar, Schedule,AddEvents,UpdateEvent, Sidebar, ThemeSettings } from "./components";
 import {
   Ecommerce,
   Employees,
@@ -10,8 +10,11 @@ import {
   Calendar,
   Order,
   Kanban,
-  Editor
+  Editor,
+  ScheduleApp,
 } from "./pages";
+
+
 
 
 import { useStateContext } from "./contexts/ContextProvider";
@@ -60,12 +63,6 @@ const App = () => {
 
                 <Route path="/kanban" element={<Kanban />} />
                 <Route path="/editor" element={<Editor />} />
-                <Route path="/schedule" exact element={<MyCalendar />} />
-                <Route path="/events/add" element={<AddEvents />} />
-                <Route path="/event/:id/update" element={<UpdateEvent />} />
-
-
-
                 <Route path="/employeedetail/:id" element={<EmployeeDetail />} />
 
 

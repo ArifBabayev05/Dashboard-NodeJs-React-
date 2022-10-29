@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes, Link} from "react-router-dom"
 
-function App() {
+function ScheduleApp() {
 
 
   return (
@@ -22,4 +22,4 @@ function App() {
 
 
 
-export default (App)
+export default (ScheduleApp)

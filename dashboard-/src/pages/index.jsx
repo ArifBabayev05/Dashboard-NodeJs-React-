@@ -7,6 +7,8 @@ export { default as Order} from "./Orders.jsx";
 export { default as Kanban} from "./Kanban.jsx";
 export { default as Editor} from "./Editor.jsx";
 export { default as Schedule} from "./Schedule.jsx";
+export { default as ScheduleApp} from "./ScheduleApp.jsx";
+
 
 export { default as Area } from "./Charts/Area";
 export { default as Bar } from "./Charts/Bar";

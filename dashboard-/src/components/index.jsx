@@ -5,6 +5,9 @@ export { default as Sidebar } from "./Sidebar";
 export { default as Navbar } from "./Navbar";
 export { default as Schedule } from "./Schedule";
 export { default as ScheduleApp } from "./ScheduleApp";
+export { default as UpdateEvent } from "./UpdateEvent";
+export { default as AddEvents } from "./AddEvents";
+
 
 export { default as Footer } from "./Footer";
 export { default as Cart } from "./Cart";
