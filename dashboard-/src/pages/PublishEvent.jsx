@@ -4,8 +4,18 @@ import React, { useState, useEffect } from "react";
 
 const PublishEvent = () => {
 
-    const [data, setData] = useState([])
+    const [data, setData] = useState('')
     const [datas, setDatas] = useState([])
+
+    useEffect(() => {
+        axios.get('http://localhost:2006/schedule')
+            .then(res => {
+                setData(res.data)
+            }).catch(err => console.log(err))
+    }, []);
+
+
+
     useEffect(() => {
         axios.get('http://localhost:2006/schedule')
             .then(res => {
@@ -13,10 +23,16 @@ const PublishEvent = () => {
             }).catch(err => console.log(err))
     }, []);
     const Option = datas.map((datas, index) => {
+        const link = datas.Subject.replace(/\s/g, '');
         return (
-            <li>
-                <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{datas.Subject}</a>
+            <li > 
+                <a href="#" data-modal-toggle="defaultModal" className="text-xs block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                    {datas.Subject}
+                    <i onClick={() => navigator.clipboard.writeText('https://meet.google.com/lookup/' + link)} className="mx-2 fa-solid fa-link text-gray-700 hover:text-orange-500" data-popover-target="popover-default"></i>
+
+                    </a>
             </li>
+
         )
     })
     function handles(e) {
@@ -32,6 +48,7 @@ const PublishEvent = () => {
         newData[e.target.id] = e.target.value;
         setData(newData);
     }
+
     return (
         <div>
             <button id="dropdownDefault" data-dropdown-toggle="dropdown" class="inline-flex items-center rounded-lg bg-blue-700 px-4 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
@@ -40,20 +57,14 @@ const PublishEvent = () => {
             </button>
             <div id="dropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style={{ "position": "absolute", "inset": "0px auto auto 0px", "margin": "0px", "transform": "translate3d(0px, 592px, 0px)" }}>
                 <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
-                    <li>
-                        <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
+                    <li data-modal-toggle="defaultModal">
+
+                        {Option}
                     </li>
                 </ul>
             </div>
+
+
 
 
         </div>
