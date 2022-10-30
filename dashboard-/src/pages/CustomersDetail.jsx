@@ -69,7 +69,7 @@ function CustomersDetail() {
         return (
             <div role="button" class="relative flex gap-3 bg-white p-2 transition-colors duration-300 hover:bg-slate-100">
                 <div class="relative h-25 w-12 shrink-0">
-                    <img class="h-12 w-12 rounded-full object-cover object-center" src="https://images.pexels.com/photos/1832326/pexels-photo-1832326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+                    <img class="h-12 w-12 rounded-xl object-cover object-center" src="https://image.shutterstock.com/image-vector/male-avatar-profile-picture-green-260nw-255319249.jpg" alt="" />
                     <p class="bg-green-400 text-black-800 w-100 text-xs font-semibold mr-2 px-1.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900 mt-3">WON</p>
 
 
@@ -80,11 +80,19 @@ function CustomersDetail() {
 
                     <h2 class="font-semibold text-xl">{Tdata.title}</h2>
                     <h3 class="text-sm">{Tdata.createAt.slice(0,10)}</h3>
+                    <h3 class="text-sm"><span class="font-semibold">Organization</span> : {Tdata.organisation}</h3>
+                    <h3 class="text-sm"><span class="font-semibold">Value</span> : ${Tdata.valuet}</h3>
+                    <hr className='w-100' style={{"position":'absolute'}}/>
+                    <h3 class="text-sm"><span class="font-semibold text-slate-800">Contact</span></h3>
+                    <h3 class="text-sm"><i class=" mr-2 fa-solid fa-phone"></i>{Tdata.tel}</h3>
+                    <h3 class="text-sm"><i class=" mr-2 fa-solid fa-envelope"></i>{Tdata.mail}</h3>
 
-                    <h3 class="text-sm">Organization : {Tdata.organisation}</h3>
-                    
+
+
+
 
                 </div>
+                
                 <div class="flex h-8 w-8 shrink-0 items-center justify-center self-center rounded-lg bg-orange-300 ring-orange-300 ring-offset-2 transition-colors duration-300 hover:bg-orange-400 focus:outline-none focus:ring-2" role="button" aria-label="Call  My wife " tabindex="1">
                     <i class="fa-sharp fa-solid fa-pen text-slate-800"></i>
                 </div>
@@ -93,6 +101,7 @@ function CustomersDetail() {
                 </div>
 
             </div>
+            
         )
     })
 
