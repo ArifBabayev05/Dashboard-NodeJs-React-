@@ -9,6 +9,13 @@ export { default as Editor} from "./Editor.jsx";
 export { default as Schedule} from "./Schedule.jsx";
 export { default as ScheduleApp} from "./ScheduleApp.jsx";
 export { default as PublishEvent} from "./PublishEvent.jsx";
+export { default as Customers} from "./Customers.jsx";
+export { default as CustomersDetail} from "./CustomersDetail.jsx";
+export { default as CustomersCard} from "./CustomersCard.jsx";
+
+
+
+
 
 
 

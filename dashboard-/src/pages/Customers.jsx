@@ -1,42 +1,110 @@
-import React from "react";
-import {
-  GridComponent,
-  ColumnsDirective,
-  ColumnDirective,
-  Page,
-  Selection,
-  Inject,
-  Edit,
-  Toolbar,
-  Sort,
-  Filter,
-} from "@syncfusion/ej2-react-grids";
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import Loader from './Loader'
+import JobCard from './CustomersCard'
 
-import { customersData, customersGrid } from "../data/dummy";
-import { Header } from "../components";
 
-const Customers = () => {
+
+
+function Jobs() {
+  const url = `http://localhost:2006/company`
+  const [query, setQuery] = useState("")
+
+
+  const [products, setProducts] = useState({
+    loading: false,
+    data: null,
+    error: false
+  })
+
+
+
+  useEffect(() => {
+    setProducts({
+      loading: true,
+      data: null,
+      error: false
+
+    })
+
+    axios.get(url)
+      .then(response => {
+        setProducts({
+          loading: false,
+          data: response.data,
+          error: false
+        })
+
+          .catch(() => {
+            setProducts({
+              loading: false,
+              data: null,
+              error: true
+            })
+          })
+      })
+  }, [url])
+
+  let content = null
+  
+
+
+  if (products.loading) {
+    content = <Loader />
+  }
+
+  if (products.error) {
+    content = <p>Error! Try Again!</p>
+  }
+
+  if (products.data) {
+    content =
+      products.data.map((product) =>
+        <div key={product.id}>
+          <JobCard product={product} />
+        </div>
+      )
+
+  }
+
+
+  if (products.data) {
+    
+    content =
+      products.data.filter(product => {
+        if (query === "") {
+
+          return product;
+
+        } else if (product.name.toLowerCase().includes(query.toLowerCase())) {
+
+          return product;
+        }
+        
+        return "";
+      }).map((product) =>
+        <div key={product.id}>
+          <JobCard product={product} />
+        </div>
+      ).reverse();
+  }
+
   return (
-    <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl dark:bg-secondary-dark-bg">
-      <Header category="Page" title="Customers" />
-      <GridComponent
-        dataSource={customersData}
-        allowPaging
-        allowSorting
-        toolbar={["Delete"]}
-        editSettings={{ allowDeleting: true, allowEditing: true }}
-        width="auto"
-      >
-        <ColumnsDirective>
-          {customersGrid.map((item, index) => (
-            <ColumnDirective key={index} {...item} />
-          ))}
-        </ColumnsDirective>
+    <div>
+      <div className='d-flex container'>
+        <h1 className='text container ' style={{ color: 'var(--pink)', fontWeight: 'normal', fontSize: '35px', alignItems: 'center', display: 'flex' }}>Vakansiyalar</h1>
+        <form className='searchJob mb-5' style={{ alignItems: 'center', display: 'flex', top: '20px' }}>
+          <input className='searchBar mt-2 p-2' onChange={event => setQuery(event.target.value)} type='text'></input>
+          <button className='search__submit' type='submit'>
+            {/* <img src='' alt='some value' /> */}
+          </button>
+        </form>
+      </div>
 
-        <Inject services={[Page, Toolbar, Selection, Edit, Sort, Filter]} />
-      </GridComponent>
+      {content}
+
     </div>
-  );
-};
+  )
+}
 
-export default Customers;
+export default Jobs

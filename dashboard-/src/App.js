@@ -12,6 +12,8 @@ import {
   Kanban,
   Editor,
   ScheduleApp,
+  Customers,
+  CustomersDetail,
 } from "./pages";
 
 
@@ -64,6 +66,11 @@ const App = () => {
                 <Route path="/kanban" element={<Kanban />} />
                 <Route path="/editor" element={<Editor />} />
                 <Route path="/employeedetail/:id" element={<EmployeeDetail />} />
+
+                <Route path="/customers" element={<Customers/>} />
+                <Route path="/customers/:id" element={<CustomersDetail/>} />
+
+
 
 
               </Routes>
