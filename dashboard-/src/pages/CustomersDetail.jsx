@@ -140,7 +140,7 @@ function CustomersDetail() {
                 <img class="w-26 h-16  mt-3 mr-2 rounded-full" src="https://play-lh.googleusercontent.com/JOPJ9dbtmH9FZKNweSkJN89I6Yy7dYJ_8kQB9eHYN_PPpH-p0gas76UDhXPes3OSVqQ" alt="image description" />
                 <a href="#" class="w-100 block p-6 max-w-2xl bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700" style={{ 'width': '100%' }}>
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Author: {NoteData.author}</h5>
-                    <p class="font-normal text-gray-700 dark:text-gray-400">Message: {NoteData.text}</p>
+                    <p class="font-normal text-gray-700 dark:text-gray-400"><i class="fa-solid fa-caret-right"></i> {NoteData.text}</p>
                     <p class="font-normal text-gray-400 dark:text-gray-400">{NoteData.createAt.slice(0,10)}</p>
 
                 </a>
