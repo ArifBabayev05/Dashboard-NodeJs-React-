@@ -21,6 +21,8 @@ const CustomersCard = (props) => {
                     </div>
                 </div>
 
+                
+
             </Link>
 
         </div>
