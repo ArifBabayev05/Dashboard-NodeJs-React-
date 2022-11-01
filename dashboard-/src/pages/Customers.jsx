@@ -5,8 +5,7 @@ import JobCard from './CustomersCard'
 
 
 
-
-function Jobs() {
+function Jobs({ user }) {
   const url = `http://localhost:2006/company`
   const [query, setQuery] = useState("")
 
@@ -46,7 +45,7 @@ function Jobs() {
   }, [url])
 
   let content = null
-  
+
 
 
   if (products.loading) {
@@ -69,7 +68,7 @@ function Jobs() {
 
 
   if (products.data) {
-    
+
     content =
       products.data.filter(product => {
         if (query === "") {
@@ -80,7 +79,7 @@ function Jobs() {
 
           return product;
         }
-        
+
         return "";
       }).map((product) =>
         <div key={product.id}>
@@ -91,19 +90,22 @@ function Jobs() {
 
   return (
     <div>
-      <div className='flex my-3  container '>
-        <h1 className='text container ml-4 font-bold' style={{  fontSize: '35px', alignItems: 'center', display: 'flex' }}>Companies</h1>
-        <form className='searchJob mb-5' style={{ alignItems: 'center', display: 'flex', top: '20px' }}>
-          <input className='searchBar bg-orange-500 text-black mr-5 rounded-xl mt-2 p-2' placeholder='Search' onChange={event => setQuery(event.target.value)} type='text'></input>
-          <button className='search__submit' type='submit'>
-            {/* <img src='' alt='some value' /> */}
-          </button>
-        </form>
-      </div>
+      {user ? <div>
+        <div className='flex my-3  container '>
+          <h1 className='text container ml-4 font-bold' style={{ fontSize: '35px', alignItems: 'center', display: 'flex' }}>Companies</h1>
+          <form className='searchJob mb-5' style={{ alignItems: 'center', display: 'flex', top: '20px' }}>
+            <input className='searchBar bg-orange-500 text-black mr-5 rounded-xl mt-2 p-2' placeholder='Search' onChange={event => setQuery(event.target.value)} type='text'></input>
+            <button className='search__submit' type='submit'>
+              {/* <img src='' alt='some value' /> */}
+            </button>
+          </form>
+        </div>
 
-      {content}
+        {content}
 
+      </div> : <Loader />}
     </div>
+
   )
 }
 

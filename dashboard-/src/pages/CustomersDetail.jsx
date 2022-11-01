@@ -6,7 +6,7 @@ import Loader from './Loader'
 import { useDispatch } from 'react-redux'
 
 //Company Details
-function CustomersDetail() {
+function CustomersDetail({user}) {
     const { id } = useParams()
     const url = `http://localhost:2006/company/${id}`
     const [product, setProduct] = useState({
@@ -239,7 +239,7 @@ function CustomersDetail() {
     return (
         <div className='container'>
 
-            <div>{content}</div>
+           {user ?  <div>{content}</div> : <Loader/>}
         </div>
 
 
