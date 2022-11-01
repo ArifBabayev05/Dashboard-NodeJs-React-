@@ -97,7 +97,7 @@ const DragOrder = ({ user }) => {
                     <div className='p-2 w-100 bg-white justify-between rounded-3xl dark:bg-secondary-dark-bg' style={{ 'display': 'content', 'width': '100%' }}>
                         <div className='card-header px-5 flex justify-between' style={{ 'width': '100%' }}>
                             <AddDealButton />
-                            <h1 className='text-3xl text-center text-orange-400 underline	justify-items-center block fs-1'>Deal Table</h1>
+                            <h1 className='text-3xl text-center text-purple-400 underline	justify-items-center block fs-1'>Deal Table</h1>
 
                             <div className='flex'>
                                 <h1 className='text mx-2 text-center text-gray-600  flex	items-center fs-1'>{sum}$</h1>

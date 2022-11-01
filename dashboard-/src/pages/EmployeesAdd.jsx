@@ -49,7 +49,7 @@ const EmployeesAdd = () => {
                         <div className="col py-7">
                             <div class="w-full max-w-xs">
                                 <h1 className='text-4xl text-center' style={{ 'color': '#EA744B', 'fontWeight': 'bold' }}>Creaete Lead</h1>
-                                <form enctype="multipart/form-data" method="post" onSubmit={(e) => submit(e)} class="bg-orange shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                                <form enctype="multipart/form-data" method="post" onSubmit={(e) => submit(e)} class="bg-purple shadow-md rounded px-8 pt-6 pb-8 mb-4">
                                     <div class="mb-4">
                                         <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                                             Name
@@ -75,7 +75,7 @@ const EmployeesAdd = () => {
                                         <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onChange={(e) => handle(e)} value={data.value} required type="name" id="leadSource" />
                                     </div>
                                     <div class="flex items-center justify-between">
-                                        <button className="bg-orange-300 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded leading-tight bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500 focus:outline-none focus:shadow-outline " type="submit">
+                                        <button className="bg-purple-300 hover:bg-purple-500 text-white font-bold py-2 px-4 rounded leading-tight bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500 focus:outline-none focus:shadow-outline " type="submit">
                                             Create
                                         </button>
                                     </div>

@@ -28,7 +28,7 @@ const PublishEvent = () => {
             <li > 
                 <a href="#" data-modal-toggle="defaultModal" className="text-xs block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                     {datas.Subject}
-                    <i onClick={() => navigator.clipboard.writeText('https://meet.google.com/lookup/' + link)} className="mx-2 fa-solid fa-link text-gray-700 hover:text-orange-500" data-popover-target="popover-default"></i>
+                    <i onClick={() => navigator.clipboard.writeText('https://meet.google.com/lookup/' + link)} className="mx-2 fa-solid fa-link text-gray-700 hover:text-purple-500" data-popover-target="popover-default"></i>
 
                     </a>
             </li>

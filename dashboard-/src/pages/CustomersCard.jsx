@@ -16,7 +16,7 @@ const CustomersCard = (props) => {
                         <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{props.product.name}</h5>
                         <span class="text-sm text-gray-500 dark:text-gray-400">{props.product.location}</span>
                         <div class="flex mt-4 space-x-3 md:mt-6">
-                            <a href="#" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-orange-500 rounded-lg hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">More Details</a>
+                            <a href="#" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-purple-500 rounded-lg hover:bg-purple-600 focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">More Details</a>
                         </div>
                     </div>
                 </div>

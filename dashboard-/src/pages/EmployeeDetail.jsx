@@ -61,23 +61,23 @@ const EmployeeDetail = ({ user }) => {
           <h1 className='text-4xl text-center' style={{ 'color': '#EA744B', 'fontWeight': 'bold' }}>Lead Detail</h1>
           <div className='d-flex' style={{ 'margin-top': '50px' }}>
             <div className=' flex headerImage me-4 my-3 mb-3'>
-              <label htmlFor='Id' className='rounded-full text-white col-lg-5' style={{ 'backgroundColor': '#ff5e26', 'padding': '5px 20px' }}>Id:</label>
+              <label htmlFor='Id' className='rounded-full text-white col-lg-5' style={{ 'backgroundColor': '#7F56D9', 'padding': '5px 20px' }}>Id:</label>
               <h1 className='mx-4 flex rounded-xl text-white col-lg-5' style={{ "align-items": "center", "display": "flex", 'backgroundColor': '#a3a3a3', 'padding': '5px 20px' }}> {product.data._id}</h1>
             </div>
             <div className=' flex headerImage me-4 my-3 mb-3'>
-              <label htmlFor='Id' className='rounded-full text-white col-lg-5' style={{ 'backgroundColor': '#ff5e26', 'padding': '5px 20px' }}>Name:</label>
+              <label htmlFor='Id' className='rounded-full text-white col-lg-5' style={{ 'backgroundColor': '#7F56D9', 'padding': '5px 20px' }}>Name:</label>
               <h1 className='mx-4 flex rounded-xl text-white col-lg-5' style={{ "align-items": "center", "display": "flex", 'backgroundColor': '#a3a3a3', 'padding': '5px 20px' }}> {product.data.name}</h1>
             </div>
             <div className=' flex headerImage me-4 my-3 mb-3'>
-              <label htmlFor='Id' className='rounded-full text-white col-lg-5' style={{ 'backgroundColor': '#ff5e26', 'padding': '5px 20px' }}>Mail:</label>
+              <label htmlFor='Id' className='rounded-full text-white col-lg-5' style={{ 'backgroundColor': '#7F56D9', 'padding': '5px 20px' }}>Mail:</label>
               <h1 className='mx-4 flex rounded-xl text-white col-lg-5' style={{ "align-items": "center", "display": "flex", 'backgroundColor': '#a3a3a3', 'padding': '5px 20px' }}> {product.data.mail}</h1>
             </div>
             <div className=' flex headerImage me-4 my-3 mb-3'>
-              <label htmlFor='Id' className='rounded-full text-white col-lg-5' style={{ 'backgroundColor': '#ff5e26', 'padding': '5px 20px' }}>Tel Number:</label>
+              <label htmlFor='Id' className='rounded-full text-white col-lg-5' style={{ 'backgroundColor': '#7F56D9', 'padding': '5px 20px' }}>Tel Number:</label>
               <h1 className='mx-4 flex rounded-xl text-white col-lg-5' style={{ "align-items": "center", "display": "flex", 'backgroundColor': '#a3a3a3', 'padding': '5px 20px' }}> {product.data.tel}</h1>
             </div>
             <div className=' flex headerImage me-4 my-3 mb-3'>
-              <label htmlFor='Id' className='rounded-full text-white col-lg-5' style={{ 'backgroundColor': '#ff5e26', 'padding': '5px 20px' }}>Lear Source:</label>
+              <label htmlFor='Id' className='rounded-full text-white col-lg-5' style={{ 'backgroundColor': '#7F56D9', 'padding': '5px 20px' }}>Lear Source:</label>
               <h1 className='mx-4 flex rounded-xl text-white col-lg-5' style={{ "align-items": "center", "display": "flex", 'backgroundColor': '#a3a3a3', 'padding': '5px 20px' }}> {product.data.leadSource}</h1>
             </div>
 

@@ -122,10 +122,10 @@ function CustomersDetail({user}) {
                     <h3 class="text-sm"><i class=" mr-2 fa-solid fa-envelope"></i>{Tdata.mail}</h3>
                 </div>
 
-                <div class="flex h-8 w-8 shrink-0 items-center justify-center self-center rounded-lg bg-orange-300 ring-orange-300 ring-offset-2 transition-colors duration-300 hover:bg-orange-400 focus:outline-none focus:ring-2" role="button" aria-label="Call  My wife " tabindex="1">
+                <div class="flex h-8 w-8 shrink-0 items-center justify-center self-center rounded-lg bg-purple-300 ring-purple-300 ring-offset-2 transition-colors duration-300 hover:bg-purple-400 focus:outline-none focus:ring-2" role="button" aria-label="Call  My wife " tabindex="1">
                     <i class="fa-sharp fa-solid fa-pen text-slate-800"></i>
                 </div>
-                <div class="flex h-8 w-8 shrink-0 items-center justify-center self-center rounded-lg bg-orange-300 ring-orange-300 ring-offset-2 transition-colors duration-300 hover:bg-orange-400 focus:outline-none focus:ring-2" role="button" aria-label="Call  My wife " tabindex="1">
+                <div class="flex h-8 w-8 shrink-0 items-center justify-center self-center rounded-lg bg-purple-300 ring-purple-300 ring-offset-2 transition-colors duration-300 hover:bg-purple-400 focus:outline-none focus:ring-2" role="button" aria-label="Call  My wife " tabindex="1">
                     <i class="fa-solid fa-ellipsis text-slate-800"></i>
                 </div>
 

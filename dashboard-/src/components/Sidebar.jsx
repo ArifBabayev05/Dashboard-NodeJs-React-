@@ -10,7 +10,7 @@ import { links } from "../data/dummy";
 
 import { useStateContext } from "../contexts/ContextProvider";
 
-const Sidebar = () => {
+const Sidebar = ({ user }) => {
   const { activeMenu, setActiveMenu, screenSize, currentColor } =
     useStateContext();
 
@@ -27,57 +27,59 @@ const Sidebar = () => {
 
   return (
     <div className="ml-3 h-screen md:overflow-hidden overflow-auto  md:hover:overflow-auto pb-10">
-      {activeMenu && (
-        <>
-          <div className="flex justify-between items-center">
-            <Link
-              to="/"
-              onClick={handleCloseSideBar}
-              className="items-center gap-3 ml-3 flex mt-4 text-xl font-extrabold tracking-tighter dark:text-white text-slate-900"
-            >
-              <SiAnalogue />
-              <span>GolfPipe</span>
-            </Link>
-            <TooltipComponent content="Menu" position="BottomCenter">
-              <button
-                type="button"
-                onClick={() =>
-                  setActiveMenu((prevActiveMenu) => !prevActiveMenu)
-                }
-                className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden"
+      {user ? <div>
+        {activeMenu && (
+          <>
+            <div className="flex justify-between items-center">
+              <Link
+                to="/"
+                onClick={handleCloseSideBar}
+                className="items-center gap-3 ml-3 flex mt-4 text-xl font-extrabold tracking-tighter dark:text-white text-slate-900"
               >
-                <MdOutlineCancel />
-              </button>
-            </TooltipComponent>
-          </div>
+                <SiAnalogue />
+                <span>GolfPipe</span>
+              </Link>
+              <TooltipComponent content="Menu" position="BottomCenter">
+                <button
+                  type="button"
+                  onClick={() =>
+                    setActiveMenu((prevActiveMenu) => !prevActiveMenu)
+                  }
+                  className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden"
+                >
+                  <MdOutlineCancel />
+                </button>
+              </TooltipComponent>
+            </div>
 
-          <div className="mt-10">
-            {links.map((item) => (
-              <div key={item.logo}>
-                 
+            <div className="mt-10">
+              {links.map((item) => (
+                <div key={item.logo}>
 
-                {item.links.map((link) => (
-                  <NavLink
-                    to={`/${link.name}`}
-                    key={link.icon}
-                    onClick={handleCloseSideBar}
-                    style={({ isActive }) => ({
-                      backgroundColor: isActive ? currentColor : "",
-                    })}
-                    className={({ isActive }) =>
-                      isActive ? activeLink : normalLink
-                    }
-                  >
-                    {link.icon}
-                    <p>{link.name.toLowerCase().replace(/\b(\w)/g, s => s.toUpperCase())}</p>
-                    
-                  </NavLink>
-                ))}
-              </div>
-            ))}
-          </div>
-        </>
-      )}
+
+                  {item.links.map((link) => (
+                    <NavLink
+                      to={`/${link.name}`}
+                      key={link.icon}
+                      onClick={handleCloseSideBar}
+                      style={({ isActive }) => ({
+                        backgroundColor: isActive ? currentColor : "",
+                      })}
+                      className={({ isActive }) =>
+                        isActive ? activeLink : normalLink
+                      }
+                    >
+                      {link.icon}
+                      <p>{link.name.toLowerCase().replace(/\b(\w)/g, s => s.toUpperCase())}</p>
+
+                    </NavLink>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+      </div> : null}
     </div>
   );
 };

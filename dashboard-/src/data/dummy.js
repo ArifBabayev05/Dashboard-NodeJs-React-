@@ -721,7 +721,7 @@ export const medicalproBranding = {
   teams: [
     {
       name: "Bootstrap",
-      color: "orange",
+      color: "purple",
     },
     {
       name: "Angular",
@@ -770,7 +770,7 @@ export const themeColors = [
   },
   {
     color: "#FB9678",
-    name: "orange-theme",
+    name: "purple-theme",
   },
 ];
 

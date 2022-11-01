@@ -94,7 +94,7 @@ function Jobs({ user }) {
         <div className='flex my-3  container '>
           <h1 className='text container ml-4 font-bold' style={{ fontSize: '35px', alignItems: 'center', display: 'flex' }}>Companies</h1>
           <form className='searchJob mb-5' style={{ alignItems: 'center', display: 'flex', top: '20px' }}>
-            <input className='searchBar bg-orange-500 text-black mr-5 rounded-xl mt-2 p-2' placeholder='Search' onChange={event => setQuery(event.target.value)} type='text'></input>
+            <input className='searchBar bg-purple-500 text-black mr-5 rounded-xl mt-2 p-2' placeholder='Search' onChange={event => setQuery(event.target.value)} type='text'></input>
             <button className='search__submit' type='submit'>
               {/* <img src='' alt='some value' /> */}
             </button>

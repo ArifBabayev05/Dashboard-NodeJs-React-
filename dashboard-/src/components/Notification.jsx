@@ -17,7 +17,7 @@ const Notification = () => {
           </p>
           <button
             type="button"
-            className="text-white text-xs rounded p-1 px-2 bg-orange-theme "
+            className="text-white text-xs rounded p-1 px-2 bg-purple-theme "
           >
             {" "}
             5 New
