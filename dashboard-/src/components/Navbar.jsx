@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { BsChatLeft } from "react-icons/bs";
 import { RiNotification3Line } from "react-icons/ri";
@@ -25,7 +25,7 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
   </TooltipComponent>
 );
 
-const Navbar = () => {
+const Navbar = ({ user, setUser }) => {
   const {
     setActiveMenu,
     isClicked,
@@ -35,7 +35,11 @@ const Navbar = () => {
     currentColor,
   } = useStateContext();
 
-
+  useEffect(() => {
+    if (localStorage.getItem("user") && !user) {
+      setUser(JSON.parse(localStorage.getItem("user")))
+    }
+  }, [user])
 
   useEffect(() => {
     if (screenSize <= 900) {
@@ -54,44 +58,70 @@ const Navbar = () => {
         icon={<AiOutlineMenu />}
       />
 
-      <div className="flex">
+      {
+        user ?
+          <div className="flex">
 
-        <NavButton
-          title="Chat"
-          dotColor="#fff"
-          customFunc={() => handleClick("chat")}
-          color={currentColor}
-          icon={<BsChatLeft />}
-        />
+            <NavButton
+              title="Chat"
+              dotColor="#fff"
+              customFunc={() => handleClick("chat")}
+              color={currentColor}
+              icon={<BsChatLeft />}
+            />
 
-        <NavButton
-          title="Notifications"
-          dotColor="#fff"
-          customFunc={() => handleClick("notification")}
-          color={currentColor}
-          icon={<RiNotification3Line />}
-        />
+            <NavButton
+              title="Notifications"
+              dotColor="#fff"
+              customFunc={() => handleClick("notification")}
+              color={currentColor}
+              icon={<RiNotification3Line />}
+            />
 
-        <TooltipComponent content="Profile" position="BottomCenter">
-          <div
-            className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
-          >
-            <img src={avatar} className="rounded-full w-8 h-8" alt="avatar" />
-            <p>
-              
-              <span className="text-gray-400 font-bold ml-1 text-14">
-                John Kuy
-              </span>
-            </p>
-            
+            <TooltipComponent content="Profile" position="BottomCenter">
+              <div
+                className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
+              >
+                <img src={avatar} className="rounded-full w-8 h-8" alt="avatar" />
+                <p>
+
+                  <span className="text-gray-400 font-bold ml-1 text-14">
+                    John Kuy
+                  </span>
+                </p>
+
+              </div>
+            </TooltipComponent>
+
+            <TooltipComponent content="Profile" position="BottomCenter">
+              <div
+                className="flex items-center mt-1 gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg">
+                <button onClick={(e) => {
+                  localStorage.removeItem("user")
+                  setUser(null)
+                }}>
+                  <span className=" text-gray-400 font-bold ml-1 text-14">
+                    Log Out
+                  </span>
+                </button>
+              </div>
+            </TooltipComponent>
+
+            {isClicked.cart && <Cart />}
+            {isClicked.chat && <Chat />}
+            {isClicked.notification && <Notification />}
+            {isClicked.userProfile && <UserProfile />}
           </div>
-        </TooltipComponent>
+          :
+          <div className="flex">
 
-        {isClicked.cart && <Cart />}
-        {isClicked.chat && <Chat />}
-        {isClicked.notification && <Notification />}
-        {isClicked.userProfile && <UserProfile />}
-      </div>
+            <a href='/signin' className="py-3 px-3 mx-2 text-sm font-medium text-center text-white bg-orange-700 rounded-lg hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">LogIn</a>
+            <a href='/signup' className="py-3 px-3 mx-2 text-sm font-medium text-center text-white bg-orange-700 rounded-lg hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">Register</a>
+
+
+
+          </div>
+      }
     </div>
   );
 };

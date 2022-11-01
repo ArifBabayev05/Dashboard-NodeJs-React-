@@ -26,6 +26,8 @@ import {
 import { useStateContext } from "./contexts/ContextProvider";
 
 const App = () => {
+  
+
   const {
     activeMenu,
     themeSettings,
@@ -54,7 +56,7 @@ const App = () => {
           >
 
             <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full" style={{ 'background-color': '#232323' }}>
-              <Navbar />
+              <Navbar user={user} setUser={setUser}/>
             </div>
 
             <div>

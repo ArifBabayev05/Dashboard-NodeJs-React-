@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import { login } from '../axios/'
+import { Link, useNavigate } from "react-router-dom";
+
 const AuthScreen = ({ setUser }) => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         email: "",
         password: "",
-    })
+    });
     return (
         <div class="flex items-center h-screen w-full">
             <div class="w-full bg-white rounded shadow-lg p-8 m-4 md:max-w-sm md:mx-auto">
@@ -12,8 +15,17 @@ const AuthScreen = ({ setUser }) => {
                 <form onSubmit={(e) => {
                     e.preventDefault();
                     login(formData)
-                        .then((res) => {console.log("Success")})
-                        .catch((err) => {console.log(err)})
+                        .then((res) => {
+                
+                            console.log(res.data)
+                            
+                            localStorage.setItem("user", JSON.stringify(res.data.user));
+                            setUser(res.data.user);
+                            navigate("/ecommerce");
+                        })
+                        .catch((err) => {
+                            console.log(err.response.data.message);
+                        });
                 }} class="mb-4">
                     <div class="mb-4 md:w-full">
                         <label for="email" class="block text-xs mb-1">Username or Email</label>

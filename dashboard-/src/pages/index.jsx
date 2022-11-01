@@ -18,9 +18,6 @@ export { default as AuthScreen} from "./AuthScreen.jsx"
 export { default as SignUp} from "./SignUp.jsx"
 
 
-
-
-
 export { default as Area } from "./Charts/Area";
 export { default as Bar } from "./Charts/Bar";
 export { default as ColorMapping } from "./Charts/ColorMapping";
