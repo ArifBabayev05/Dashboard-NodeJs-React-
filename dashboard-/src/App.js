@@ -43,11 +43,11 @@ const App = () => {
         <div className="flex relative dark:bg-main-dark-bg">
           {activeMenu ? (
             <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white">
-              <Sidebar />
+              <Sidebar user={user}/>
             </div>
           ) : (
             <div className="w-0 dark:bg-secondary-dark-bg">
-              <Sidebar />
+              <Sidebar user={user}/>
             </div>
           )}
 
@@ -64,22 +64,22 @@ const App = () => {
 
               <Routes>
                 {/* Dashboard */}
-                <Route path="/" element={<HomeScreen />} />
+                <Route path="/" element={<HomeScreen user={user}/>} />
                 <Route path="/signin" element={<AuthScreen setUser={setUser} />} />
                 <Route path="/signup" element={<SignUp />} />
 
-                <Route path="/ecommerce" element={<Ecommerce />} />
-                <Route path="/employees" element={<Employees />} />
-                <Route path="/calendar" element={<Calendar />} />
-                <Route path="/order" element={<Order />} />
-                <Route path="/orderr" element={<DragOrder />} />
+                <Route path="/ecommerce" element={<Ecommerce user={user}/>} />
+                <Route path="/employees" element={<Employees user={user}/>} />
+                <Route path="/calendar" element={<Calendar user={user}/>} />
+                <Route path="/order" element={<Order user={user}/>} />
+                <Route path="/orderr" element={<DragOrder user={user}/>} />
 
-                <Route path="/kanban" element={<Kanban />} />
-                <Route path="/editor" element={<Editor />} />
-                <Route path="/employeedetail/:id" element={<EmployeeDetail />} />
+                <Route path="/kanban" element={<Kanban user={user}/>} />
+                <Route path="/editor" element={<Editor user={user}/>} />
+                <Route path="/employeedetail/:id" element={<EmployeeDetail user={user}/>} />
 
-                <Route path="/customers" element={<Customers />} />
-                <Route path="/customers/:id" element={<CustomersDetail />} />
+                <Route path="/customers" element={<Customers user={user}/>} />
+                <Route path="/customers/:id" element={<CustomersDetail user={user}/>} />
 
 
 

@@ -86,7 +86,7 @@ const Navbar = ({ user, setUser }) => {
                 <p>
 
                   <span className="text-gray-400 font-bold ml-1 text-14">
-                    John Kuy
+                    {user?.fullname}
                   </span>
                 </p>
 
