@@ -113,7 +113,7 @@ const EmployeeDetail = ({ user }) => {
   return (
     <div className='container'>
 
-      {user ?
+      {user?.isAdmin ?
         <div>{content}</div>
         : <Loader />}
     </div>

@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { login } from '../axios/'
 import { Link, useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const AuthScreen = ({ setUser }) => {
@@ -17,6 +16,7 @@ const AuthScreen = ({ setUser }) => {
                 position="top-right"
                 reverseOrder={true}
             />
+            
             <div class="w-full bg-white rounded shadow-lg p-8 m-4 md:max-w-sm md:mx-auto">
                 <span class="block w-full text-xl uppercase font-bold mb-4">Login to your account</span>
                 <form onSubmit={(e) => {

@@ -133,7 +133,7 @@ const Employees = ({ user }) => {
             <div className="row flex-nowrap">
 
               {
-                user ?
+                user?
                   <div className="col py-3">
                     <div className='row'>
                       <div className='col-md-9 col-sm-6 col-lg-12 d-flex mb-3 justify-content-between'>

@@ -27,7 +27,7 @@ const Sidebar = ({ user }) => {
 
   return (
     <div className="ml-3 h-screen md:overflow-hidden overflow-auto  md:hover:overflow-auto pb-10">
-      {user ? <div>
+      {user?.isAdmin ?<div>
         {activeMenu && (
           <>
             <div className="flex justify-between items-center">

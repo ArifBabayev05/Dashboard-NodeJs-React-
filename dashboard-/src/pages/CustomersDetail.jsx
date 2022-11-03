@@ -239,7 +239,7 @@ function CustomersDetail({user}) {
     return (
         <div className='container'>
 
-           {user ?  <div>{content}</div> : <Loader/>}
+           {user?.isAdmin ?  <div>{content}</div> : <Loader/>}
         </div>
 
 

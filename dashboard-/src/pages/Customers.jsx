@@ -90,7 +90,7 @@ function Jobs({ user }) {
 
   return (
     <div>
-      {user ? <div>
+      {user?.isAdmin ?<div>
         <div className='flex my-3  container '>
           <h1 className='text container ml-4 font-bold' style={{ fontSize: '35px', alignItems: 'center', display: 'flex' }}>Companies</h1>
           <form className='searchJob mb-5' style={{ alignItems: 'center', display: 'flex', top: '20px' }}>

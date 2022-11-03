@@ -59,7 +59,7 @@ const Navbar = ({ user, setUser }) => {
       />
 
       {
-        user ?
+        user?
           <div className="flex">
 
             <NavButton

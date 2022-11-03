@@ -462,7 +462,7 @@ export const links = [
     title: "Dashboard",
     links: [
       {
-        name: "ecommerce",
+        name: "home",
         icon: <FiShoppingBag />,
       },
     ],

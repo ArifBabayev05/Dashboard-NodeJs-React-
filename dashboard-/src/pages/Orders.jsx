@@ -84,7 +84,7 @@ const Orders = ({ user }) => {
 
   return (
     <div>
-      {user ?
+      {user?.isAdmin ?
         <div className="container">
           <div className='flex'>
             <div className='p-2 w-100 bg-white justify-between rounded-3xl dark:bg-secondary-dark-bg' style={{ 'display': 'content', 'width': '100%' }}>
