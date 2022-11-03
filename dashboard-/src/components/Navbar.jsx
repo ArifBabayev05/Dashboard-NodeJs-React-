@@ -96,14 +96,14 @@ const Navbar = ({ user, setUser }) => {
             <TooltipComponent content="Profile" position="BottomCenter">
               <div
                 className="flex items-center mt-1 gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg">
-                <button onClick={(e) => {
+                <a href='/signin' onClick={(e) => {
                   localStorage.removeItem("user")
                   setUser(null)
                 }}>
                   <span className=" text-gray-400 font-bold ml-1 text-14">
                     Log Out
                   </span>
-                </button>
+                </a>
               </div>
             </TooltipComponent>
 
