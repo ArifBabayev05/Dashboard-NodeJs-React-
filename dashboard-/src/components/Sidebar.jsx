@@ -37,7 +37,7 @@ const Sidebar = ({ user }) => {
                 className="items-center gap-3 ml-3 flex mt-4 text-xl font-extrabold tracking-tighter dark:text-white text-slate-900"
               >
                 <SiAnalogue />
-                <span>GolfPipe</span>
+                <span>Golfheap</span>
               </Link>
               <TooltipComponent content="Menu" position="BottomCenter">
                 <button

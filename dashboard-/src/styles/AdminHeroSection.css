@@ -36,8 +36,8 @@
 }
 
 .cube:nth-child(2) {
-    -webkit-animation-delay: 2s;
-    animation-delay: 2s;
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
     left: 25vw;
     top: 40vh;
 }

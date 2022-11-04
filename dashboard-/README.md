@@ -1,4 +1,4 @@
-**GolfPipe Dashboard**
+**Golfheap Dashboard**
 
 ![Alt text](./src//data/1.png "Page Preview")
 

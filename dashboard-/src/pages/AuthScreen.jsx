@@ -29,7 +29,7 @@ const AuthScreen = ({ setUser }) => {
 
                             localStorage.setItem("user", JSON.stringify(res.data.user));
                             setUser(res.data.user);
-                            navigate("/ecommerce");
+                            navigate("/home");
                             toast.success("Success")
 
                         })
