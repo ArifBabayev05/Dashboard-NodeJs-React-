@@ -35,19 +35,6 @@ const PublishEvent = () => {
 
         )
     })
-    function handles(e) {
-        const newData = { ...datas }
-        console.log(e.taget.value)
-        newData[e.target.selected] = e.target.value;
-        setDatas(newData);
-    }
-
-    function handle(e) {
-
-        const newData = { ...data }
-        newData[e.target.id] = e.target.value;
-        setData(newData);
-    }
 
     return (
         <div>

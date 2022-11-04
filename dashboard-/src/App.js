@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import toast, { Toaster } from 'react-hot-toast';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Navbar, Schedule, AddEvents, UpdateEvent, Sidebar, ThemeSettings } from "./components";
 import {
   Ecommerce,
@@ -23,6 +24,7 @@ import {
 
 
 
+
 import { useStateContext } from "./contexts/ContextProvider";
 
 const App = () => {
@@ -38,10 +40,11 @@ const App = () => {
 
   return (
     <div className={currentMode === "Dark" ? "dark" : ""}>
-      <Toaster
+      {/* <Toaster
         position="top-right"
         reverseOrder={true}
-      />
+      /> */}
+      <ToastContainer/>
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
           {activeMenu ? (

@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { login } from '../axios/'
 import { Link, useNavigate } from "react-router-dom";
-import toast, { Toaster } from 'react-hot-toast';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const AuthScreen = ({ setUser }) => {
@@ -12,10 +13,10 @@ const AuthScreen = ({ setUser }) => {
     });
     return (
         <div class="flex text-center items-center h-screen w-full">
-            <Toaster
+            {/* <Toaster
                 position="top-right"
                 reverseOrder={true}
-            />
+            /> */}
             
             <div class="w-full bg-white rounded shadow-lg p-8 m-4 md:max-w-sm md:mx-auto">
                 <span class="block w-full text-xl uppercase font-bold mb-4">Login to your account</span>

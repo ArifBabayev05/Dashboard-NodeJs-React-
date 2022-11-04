@@ -4,9 +4,11 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import Loader from './Loader'
 import { useDispatch } from 'react-redux'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 //Company Details
-function CustomersDetail({user}) {
+function CustomersDetail({ user }) {
     const { id } = useParams()
     const url = `http://localhost:2006/company/${id}`
     const [product, setProduct] = useState({
@@ -14,8 +16,6 @@ function CustomersDetail({user}) {
         data: null,
         error: false
     })
-
-
 
     let content = null
 
@@ -44,7 +44,7 @@ function CustomersDetail({user}) {
                     })
             })
     }, [url])
-    
+
 
     const [Tdata, setTData] = useState([])
     const [NoteData, setNoteData] = useState([])
@@ -88,7 +88,7 @@ function CustomersDetail({user}) {
             author: product.data.name
         }).then(res => {
         }).catch((err) => {
-            console.log(err);
+            toast.error(err)
         })
     }
     function handle(e) {
@@ -141,7 +141,7 @@ function CustomersDetail({user}) {
                 <a href="#" class="w-100 block p-6 max-w-2xl bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700" style={{ 'width': '100%' }}>
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Author: {NoteData.author}</h5>
                     <p class="font-normal text-gray-700 dark:text-gray-400"><i class="fa-solid fa-caret-right"></i> {NoteData.text}</p>
-                    <p class="font-normal text-gray-400 dark:text-gray-400">{NoteData.createAt.slice(0,10)}</p>
+                    <p class="font-normal text-gray-400 dark:text-gray-400">{NoteData.createAt.slice(0, 10)}</p>
 
                 </a>
             </div>
@@ -239,7 +239,7 @@ function CustomersDetail({user}) {
     return (
         <div className='container'>
 
-           {user?.isAdmin ?  <div>{content}</div> : <Loader/>}
+            {user?.isAdmin ? <div>{content}</div> : <Loader />}
         </div>
 
 
