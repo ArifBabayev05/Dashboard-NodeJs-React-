@@ -16,6 +16,8 @@ export { default as DragOrder} from "./DragOrder.jsx"
 export { default as HomeScreen} from "./HomeScreen.jsx"
 export { default as AuthScreen} from "./AuthScreen.jsx"
 export { default as SignUp} from "./SignUp.jsx"
+export { default as WebAnalytic} from "./WebAnalytic.jsx"
+
 
 
 export { default as Area } from "./Charts/Area";

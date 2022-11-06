@@ -18,7 +18,8 @@ import {
   DragOrder,
   HomeScreen,
   AuthScreen,
-  SignUp
+  SignUp,
+  WebAnalytic
 } from "./pages";
 
 
@@ -79,7 +80,9 @@ const App = () => {
                 <Route path="/calendar" element={<Calendar user={user} />} />
                 <Route path="/order" element={<Order user={user} />} />
                 <Route path="/orderr" element={<DragOrder user={user} />} />
+                <Route path="/Analytics" element={<WebAnalytic user={user} />} />
 
+                
                 <Route path="/kanban" element={<Kanban user={user} />} />
                 <Route path="/editor" element={<Editor user={user} />} />
                 <Route path="/employeedetail/:id" element={<EmployeeDetail user={user} />} />

@@ -465,6 +465,10 @@ export const links = [
         name: "home",
         icon: <FiShoppingBag />,
       },
+      {
+        name: "Analytics",
+        icon: <IoMdContacts />,
+      },
     ],
   },
 
